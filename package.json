@@ -1,0 +1,17 @@
+{
+  "name": "fraudguard",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": "cd backend && node app.js",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "install": "npm run install-backend && npm run install-frontend",
+    "build-frontend": "cd frontend && npm run build",
+    "copy-frontend": "mkdir -p backend/public && cp -r frontend/build/* backend/public/",
+    "build": "npm run build-frontend && npm run copy-frontend",
+    "heroku-postbuild": "npm run build"
+  }
+}
